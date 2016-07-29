@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problem xmlns="http://www.w3schools.com"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.w3schools.com vrp_xml_schema.xsd">
+    <problemType>
+        <fleetSize>FINITE</fleetSize>
+    </problemType>
+    <!--  <vehicles>
+        <vehicle>
+            <id>solomonVehicle1</id>
+            <typeId>solomonType</typeId>
+            <startLocation>
+                <id>0</id>
+                <coord x="20.0" y="70.0"/>
+            </startLocation>
+            <endLocation>
+                <id>0</id>
+                <coord x="20.0" y="70.0"/>
+            </endLocation>
+            <timeSchedule>
+                <start>0.0</start>
+                <end>600.0</end>
+            </timeSchedule>
+            <returnToDepot>true</returnToDepot>
+        </vehicle>
+        <vehicle>
+            <id>solomonVehicle2</id>
+            <typeId>solomonType</typeId>
+            <startLocation>
+                <id>1</id>
+                <coord x="65.0" y="35.0"/>
+            </startLocation>
+            <endLocation>
+                <id>1</id>
+                <coord x="65.0" y="35.0"/>
+            </endLocation>
+            <timeSchedule>
+                <start>0.0</start>
+                <end>600.0</end> 
+            </timeSchedule>
+            <returnToDepot>true</returnToDepot>
+        </vehicle>
+    </vehicles>
+    <vehicleTypes>
+        <type>
+            <id>solomonType</id>
+            <capacity-dimensions>
+                <dimension index="0">200</dimension>
+            </capacity-dimensions>
+            <costs>
+                <fixed>0.0</fixed>
+                <distance>1.0</distance> 
+                <time>0.0</time>
+            </costs>
+        </type>
+    </vehicleTypes> -->
+    <services>
+    	<service id="1" type="service">
+            <locationId>1</locationId>
+            <coord x="10.0" y="95.0"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>390.0</start>
+                    <end>450.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="2" type="service">
+            <locationId>2</locationId>
+            <coord x="32.0" y="97.0"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>360.0</start>
+                    <end>510.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="3" type="service">
+            <locationId>3</locationId>
+            <coord x="61" y="94"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>120.0</start>
+                    <end>390.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="4" type="service">
+            <locationId>4</locationId>
+            <coord x="75" y="70"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>300.0</start>
+                    <end>480.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="5" type="service">
+            <locationId>5</locationId>
+            <coord x="80" y="25"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>360.0</start>
+                    <end>600.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="6" type="service">
+            <locationId>6</locationId>
+            <coord x="8" y="69"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>270.0</start>
+                    <end>480.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="7" type="service">
+            <locationId>7</locationId>
+            <coord x="51" y="15"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>0.0</start>
+                    <end>600.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="8" type="service">
+            <locationId>8</locationId>
+            <coord x="40" y="48"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>480.0</start>
+                    <end>600.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="9" type="service">
+            <locationId>9</locationId>
+            <coord x="22" y="17"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>360.0</start>
+                    <end>430.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+        <service id="10" type="service">
+            <locationId>10</locationId>
+            <coord x="6" y="37"/>
+            <capacity-dimensions>
+                <dimension index="0">10</dimension>
+            </capacity-dimensions>
+            <duration>30.0</duration>
+            <timeWindows>
+                <timeWindow>
+                    <start>390.0</start>
+                    <end>540.0</end>
+                </timeWindow>
+            </timeWindows>
+        </service>
+    </services>
+ </problem>

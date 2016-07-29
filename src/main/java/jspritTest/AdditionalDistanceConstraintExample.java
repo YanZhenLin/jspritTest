@@ -133,6 +133,7 @@ public class AdditionalDistanceConstraintExample {
         VehicleRoutingTransportCostsMatrix costMatrix = createMatrix(vrpBuilder);
         vrpBuilder.setRoutingCost(costMatrix);
         VehicleRoutingProblem vrp = vrpBuilder.build();
+        
 
         VehicleRoutingAlgorithmBuilder vraBuilder = new VehicleRoutingAlgorithmBuilder(vrp, "input/algorithmConfig_solomon.xml");
 
