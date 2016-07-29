@@ -5,7 +5,7 @@ import java.util.Collection;
 
 import jsprit.analysis.toolbox.AlgorithmSearchProgressChartListener;
 import jsprit.analysis.toolbox.GraphStreamViewer;
-import jsprit.analysis.toolbox.Plotter;
+
 import jsprit.analysis.toolbox.StopWatch;
 import jsprit.core.algorithm.VehicleRoutingAlgorithm;
 import jsprit.core.algorithm.VehicleRoutingAlgorithmBuilder;
@@ -23,6 +23,7 @@ import jsprit.core.util.Coordinate;
 import jsprit.core.util.EuclideanDistanceCalculator;
 import jsprit.core.util.Solutions;
 import jsprit.core.util.VehicleRoutingTransportCostsMatrix;
+import jspritTest.util.Plotter;
 
 
 //The key difference here is using a different xml input file
@@ -66,7 +67,7 @@ public class VehicleServiceWithTimeWindow {
 
         new Plotter(vrp, Solutions.bestOf(solutions)).setLabel(Plotter.Label.ID).plot("output/p01_solution.png", "p01");
 
-        new GraphStreamViewer(vrp, Solutions.bestOf(solutions)).setRenderDelay(100).display();
+        //new GraphStreamViewer(vrp, Solutions.bestOf(solutions)).setRenderDelay(50).display();
 	}
 	
 	//simple method used to create the cost matrix using Euclidean deistance, we can easily change the euclidean cost matrix however to be of a travel cost instead
