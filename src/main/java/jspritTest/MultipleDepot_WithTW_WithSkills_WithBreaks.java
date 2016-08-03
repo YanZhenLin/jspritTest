@@ -3,8 +3,6 @@ package jspritTest;
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.jfree.util.Log;
-
 import jsprit.analysis.toolbox.AlgorithmSearchProgressChartListener;
 import jsprit.analysis.toolbox.GraphStreamViewer;
 import jsprit.analysis.toolbox.StopWatch;
@@ -15,24 +13,24 @@ import jsprit.core.problem.Location;
 import jsprit.core.problem.VehicleRoutingProblem;
 import jsprit.core.problem.VehicleRoutingProblem.FleetSize;
 import jsprit.core.problem.io.VrpXMLReader;
+import jsprit.core.problem.job.Break;
 import jsprit.core.problem.solution.VehicleRoutingProblemSolution;
+import jsprit.core.problem.solution.route.activity.TimeWindow;
 import jsprit.core.problem.vehicle.VehicleImpl;
 import jsprit.core.problem.vehicle.VehicleTypeImpl;
 import jsprit.core.reporting.SolutionPrinter;
 import jsprit.core.util.Coordinate;
-import jsprit.core.util.EuclideanDistanceCalculator;
 import jsprit.core.util.Solutions;
-import jsprit.core.util.VehicleRoutingTransportCostsMatrix;
 import jspritTest.util.Plotter;
 
-public class MultipleDepotExampleWithTimeWindowAndSkills {
+public class MultipleDepot_WithTW_WithSkills_WithBreaks {
 
 	public static void main(String... args ){
 		VehicleRoutingProblem.Builder vrpBuilder = VehicleRoutingProblem.Builder.newInstance();
         new VrpXMLReader(vrpBuilder).read("input/solomon_c101_withTW_withSkills.xml");
         
         //we will manually setup the vehicles and depots
-        int nuOfVehicles = 1;
+        int nuOfVehicles = 2;
         int capacity = 80;
         Coordinate firstDepotCoord = Coordinate.newInstance(20, 70);
         Coordinate secondDepotCoord = Coordinate.newInstance(65, 35);
@@ -60,17 +58,24 @@ public class MultipleDepotExampleWithTimeWindowAndSkills {
             depotCounter++;
         }
         
+        //for the 3rd vehicle that can support spanish clients
         for (int i = 0; i < nuOfVehicles; i++) {
             VehicleTypeImpl vehicleType = VehicleTypeImpl.Builder.newInstance(depotCounter + "_type")
             		.addCapacityDimension(0, capacity)
             		.setCostPerDistance(1.0)
             		.setCostPerTransportTime(1.0)
             		.build();
+            
+            Break lunchBreak = Break.Builder.newInstance("lunchBreak")
+                    .setTimeWindow(TimeWindow.newInstance(210, 300)).setServiceTime(100).build();
+            
             VehicleImpl vehicle = VehicleImpl.Builder.newInstance(depotCounter + "_" + (i + 1) + "_vehicle")
             		.setStartLocation(Location.newInstance(thirdDepotCoord.getX(), thirdDepotCoord.getY()))
             		.setType(vehicleType)
+            		.setBreak(lunchBreak)
             		.setEarliestStart(0)
             		.setLatestArrival(600)
+            	
             		.addSkill("spanish").build();
             vrpBuilder.addVehicle(vehicle);
         }
@@ -89,7 +94,9 @@ public class MultipleDepotExampleWithTimeWindowAndSkills {
 
         SolutionPrinter.print(vrp, Solutions.bestOf(solutions), SolutionPrinter.Print.VERBOSE);
         new Plotter(vrp, Solutions.bestOf(solutions)).setLabel(Plotter.Label.ID).plot("output/p01_solution.png", "p01");
-        new GraphStreamViewer(vrp, Solutions.bestOf(solutions)).setRenderDelay(50).display();
+        
+        //we cannot graph Stream viewer
+        //new GraphStreamViewer(vrp, Solutions.bestOf(solutions)).setRenderDelay(50).display();
 	}
 	
 }

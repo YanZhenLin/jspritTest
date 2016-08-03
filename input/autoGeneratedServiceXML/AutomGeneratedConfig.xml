@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Problem xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3schools.com vrp_xml_schema.xsd">
+  <services>
+    <service id="0" type="service">
+      <locationId>0</locationId>
+      <coord x="39.0" y="14.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>30.0</start>
+          <end>60.0</end>
+        </timeWindow>
+      </timeWindows>
+      <requiredSkills>spanish</requiredSkills>
+    </service>
+    <service id="1" type="service">
+      <locationId>1</locationId>
+      <coord x="56.0" y="26.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>30.0</start>
+          <end>300.0</end>
+        </timeWindow>
+      </timeWindows>
+      <requiredSkills>spanish</requiredSkills>
+    </service>
+    <service id="2" type="service">
+      <locationId>2</locationId>
+      <coord x="2.0" y="34.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>330.0</start>
+          <end>540.0</end>
+        </timeWindow>
+      </timeWindows>
+    </service>
+    <service id="3" type="service">
+      <locationId>3</locationId>
+      <coord x="72.0" y="32.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>240.0</start>
+          <end>390.0</end>
+        </timeWindow>
+      </timeWindows>
+    </service>
+    <service id="4" type="service">
+      <locationId>4</locationId>
+      <coord x="13.0" y="30.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>180.0</start>
+          <end>240.0</end>
+        </timeWindow>
+      </timeWindows>
+    </service>
+    <service id="5" type="service">
+      <locationId>5</locationId>
+      <coord x="31.0" y="67.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>30.0</start>
+          <end>330.0</end>
+        </timeWindow>
+      </timeWindows>
+    </service>
+    <service id="6" type="service">
+      <locationId>6</locationId>
+      <coord x="75.0" y="58.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>150.0</start>
+          <end>450.0</end>
+        </timeWindow>
+      </timeWindows>
+    </service>
+    <service id="7" type="service">
+      <locationId>7</locationId>
+      <coord x="52.0" y="14.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>540.0</start>
+          <end>570.0</end>
+        </timeWindow>
+      </timeWindows>
+    </service>
+    <service id="8" type="service">
+      <locationId>8</locationId>
+      <coord x="63.0" y="90.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>30.0</start>
+          <end>330.0</end>
+        </timeWindow>
+      </timeWindows>
+    </service>
+    <service id="9" type="service">
+      <locationId>9</locationId>
+      <coord x="25.0" y="69.0"/>
+      <capacity-dimensions>
+        <dimension index="0">10</dimension>
+      </capacity-dimensions>
+      <duration>30.0</duration>
+      <timeWindows>
+        <timeWindow>
+          <start>420.0</start>
+          <end>540.0</end>
+        </timeWindow>
+      </timeWindows>
+    </service>
+  </services>
+</Problem>

@@ -170,7 +170,7 @@
             <duration>30.0</duration>
             <timeWindows>
                 <timeWindow>
-                    <start>540.0</start>
+                    <start>500.0</start>
                     <end>600.0</end>
                 </timeWindow>
             </timeWindows>
