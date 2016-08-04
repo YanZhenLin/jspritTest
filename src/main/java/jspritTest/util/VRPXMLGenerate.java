@@ -20,7 +20,7 @@ public class VRPXMLGenerate {
 		Properties prop = new Properties();
 		InputStream input = null;
 		try {
-			input = new FileInputStream("input/propertiesConfig/100Services.properties");
+			input = new FileInputStream("input/propertiesConfig/1000Services.properties");
 			prop.load(input);
 			
 			VRPXMLGenerator generator = new VRPXMLGenerator();
