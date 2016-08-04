@@ -39,7 +39,7 @@ public class ThreeDepot500Services {
 
         SolutionPrinter.print(vrp, Solutions.bestOf(solutions), SolutionPrinter.Print.VERBOSE);
         
-        File solutionFile = new File("output/PrintedSolutions/"+serviceFileName+"Solution.txt");
+        File solutionFile = new File("output/PrintedSolutions/"+serviceFileName+"SolutionThreeDepot.txt");
         try {
 			solutionFile.createNewFile();
 		} catch (IOException e) {

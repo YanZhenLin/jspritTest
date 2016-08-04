@@ -40,7 +40,7 @@ public class FiveDepot1000Services {
 
         SolutionPrinter.print(vrp, Solutions.bestOf(solutions), SolutionPrinter.Print.VERBOSE);
         
-        File solutionFile = new File("output/PrintedSolutions/"+serviceFileName+"Solution.txt");
+        File solutionFile = new File("output/PrintedSolutions/"+serviceFileName+"Solution5Depots.txt");
         try {
 			solutionFile.createNewFile();
 		} catch (IOException e) {
