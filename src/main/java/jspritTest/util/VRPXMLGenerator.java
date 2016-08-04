@@ -43,10 +43,12 @@ public class VRPXMLGenerator {
 	private static Transformer transformer;
 	
 	private static Random random;
-	
-	public VRPXMLGenerator() throws ParserConfigurationException, TransformerConfigurationException{
+	static{
 		if(random == null)
 			random = new Random();
+	}
+	
+	public VRPXMLGenerator() throws ParserConfigurationException, TransformerConfigurationException{
 		
 		if(documentFactory == null){
 			documentFactory = DocumentBuilderFactory.newInstance();
@@ -206,13 +208,10 @@ public class VRPXMLGenerator {
 	}
 	
 	//return random 30 minute windows, setup some restrictions
-	private double getRandomStart(double min, double max) {
-		double result = maxTimeWindow;
-		while( result > maxTimeWindow-30 ){ //must be 30 less than the max window
+	public static double getRandomStart(double min, double max) {
+		double result = max;
+		while( result > max-90 ){ //must be 60 less than the max window
 			result = getRandom(min, max);
-		}
-		if(result < (min+30)){ //if less than 30 more than the min
-			result += 30; //add one hour
 		}
 		int mod = (int)result % 30; //get the minutes remainder, then we subtract
 		return ((int)result) - mod;
@@ -234,7 +233,7 @@ public class VRPXMLGenerator {
 	 * 
 	 */
 	private Element createProblem(Document document){
-		Element problem = document.createElement("Problem");
+		Element problem = document.createElement("problem");
 		problem.setAttributeNode( createAttribute(document, "xmlns", "http://www.w3schools.com"));
 		problem.setAttributeNode( createAttribute(document, "xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance"));
 		problem.setAttributeNode( createAttribute(document, "xsi:schemaLocation", "http://www.w3schools.com vrp_xml_schema.xsd" ));

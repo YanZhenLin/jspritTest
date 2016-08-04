@@ -20,7 +20,7 @@ public class VRPXMLGenerate {
 		Properties prop = new Properties();
 		InputStream input = null;
 		try {
-			input = new FileInputStream("input/propertiesConfig/20Services.properties");
+			input = new FileInputStream("input/propertiesConfig/100Services.properties");
 			prop.load(input);
 			
 			VRPXMLGenerator generator = new VRPXMLGenerator();
@@ -32,7 +32,7 @@ public class VRPXMLGenerate {
 			generator.setNoServices(Integer.parseInt( prop.getProperty("noServices")) ); //int
 			generator.setServiceDuration( Double.parseDouble(prop.getProperty("serviceDuration"))); //double
 			generator.addSkill(prop.getProperty("requiredSkills")); // we only have one skill at the time, but need to account for multiple skills
-			System.out.println(generator);
+			//System.out.println(generator);
 			generator.generateXML();
 		} catch (TransformerConfigurationException e) {
 			e.printStackTrace();
